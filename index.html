@@ -3,205 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Saini | Frontend & CMS Developer</title>
+    <title>Deepak Saini | Theme Developer & Programmer</title>
     <style>
-        /* Base Styles */
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-light);
-            line-height: 1.6;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--text-light);
+        /* Glassmorphism Container */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         }
 
-        /* Navigation */
         header {
-            background-color: rgba(15, 23, 42, 0.9);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #334155;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            background: rgba(15, 32, 39, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 2rem;
         }
 
-        nav ul li a:hover {
-            color: var(--primary-color);
-            transition: color 0.3s;
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00c6ff;
+        }
+
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Hero Section */
         .hero {
-            padding: 8rem 5% 4rem;
-            text-align: center;
-            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            height: 75vh;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .hero h1 span {
-            color: var(--primary-color);
+            color: #00c6ff;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 2rem;
+            color: #b0bec5;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
         }
 
         .btn {
-            background-color: var(--primary-color);
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
-            transition: background 0.3s;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
-            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3);
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
+        h2.section-title {
             font-size: 2.5rem;
+            text-align: center;
             margin-bottom: 3rem;
-            color: var(--primary-color);
+            position: relative;
         }
 
-        /* Skills */
-        .skills-grid {
+        h2.section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #00c6ff;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Highlighted Theme Section */
+        .theme-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .theme-card {
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-10px);
+            border-color: #00c6ff;
+        }
+
+        .theme-card h3 {
+            color: #00c6ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .theme-features {
+            list-style: none;
+            margin-top: 1rem;
+            color: #cfd8dc;
+        }
+
+        .theme-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .theme-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00c6ff;
+            font-weight: bold;
+        }
+
+        /* Other Skills Grid */
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .skill-card {
-            background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #334155;
-            transition: transform 0.3s;
+        .skill-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
         }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-        }
-
-        .skill-card h3 {
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .skill-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #334155;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content h3 {
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .project-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
+        .skill-item p {
+            color: #b0bec5;
             font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            background-color: #020617;
-            border-top: 1px solid #334155;
-        }
-
-        .social-links {
-            margin-bottom: 1rem;
+            padding: 3rem 5%;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
         }
 
         .social-links a {
-            margin: 0 10px;
-            color: var(--primary-color);
-            font-weight: bold;
+            display: inline-block;
+            margin: 0 15px;
+            color: #00c6ff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none; /* Hide menu on mobile for simplicity in this version */
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
         }
     </style>
 </head>
@@ -211,7 +227,7 @@
         <div class="logo">Deepak Saini</div>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#themes">Themes</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -220,76 +236,73 @@
     </header>
 
     <section class="hero">
-        <h1>Hi, I'm <span>Deepak Saini</span></h1>
-        <p>A Frontend Developer & CMS Expert specializing in custom WordPress & Blogger Themes, Web Utilities, and Automation Scripts.</p>
-        <a href="#projects" class="btn">View My Work</a>
+        <h1>Bespoke <span>WordPress</span> & <span>Blogger</span> Themes</h1>
+        <p>I design and develop custom, high-performance templates and fully functional web utilities to help businesses and creators stand out online.</p>
+        <a href="#contact" class="btn">Hire Me</a>
     </section>
 
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-muted);">
-            <p>I build fast, responsive, and SEO-optimized websites from the ground up using custom XML templates, advanced CSS styling, and dynamic schema markups. Beyond standard themes, I develop interactive web utilities (like HTML5 Canvas Image Compressors and Age Calculators), browser extensions, and Python automation scripts to enhance user experience and streamline workflows.</p>
+    <section id="themes">
+        <h2 class="section-title">CMS Theme Development</h2>
+        <div class="theme-showcase">
+            <div class="glass-panel theme-card">
+                <h3>WordPress Themes</h3>
+                <p>Custom-coded from scratch or built upon robust frameworks. Tailored exactly to client requirements without heavy, bloatware plugins.</p>
+                <ul class="theme-features">
+                    <li>Custom Post Types & Advanced Custom Fields</li>
+                    <li>Responsive, Mobile-First Design</li>
+                    <li>SEO Optimized & Fast Loading Speeds</li>
+                    <li>WooCommerce Integration & Styling</li>
+                </ul>
+            </div>
+            
+            <div class="glass-panel theme-card">
+                <h3>Blogger (XML) Templates</h3>
+                <p>Transforming standard Blogger blogs into professional websites. I specialize in deep XML customization and dynamic layouts.</p>
+                <ul class="theme-features">
+                    <li>Custom XML Layout Design</li>
+                    <li>Dynamic Schema Markups for Google Rich Snippets</li>
+                    <li>Custom JavaScript Widgets Integration</li>
+                    <li>AdSense Optimized Layouts</li>
+                </ul>
+            </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="section-title">My Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>CMS & Theming</h3>
-                <p>WordPress Theme Development, Blogger XML Customization, and dynamic schema markups for SEO optimization.</p>
+        <h2 class="section-title">Beyond Templates</h2>
+        <div class="grid-3">
+            <div class="glass-panel skill-item">
+                <h4>JavaScript Web Utilities</h4>
+                <p>Developing interactive client-side tools like HTML5 Canvas Image Compressors, Age Calculators, and Typing Speed Tests to boost site engagement.</p>
             </div>
-            <div class="skill-card">
-                <h3>Frontend Development</h3>
-                <p>HTML5, CSS3, JavaScript, HTML5 Canvas, and building responsive UI/UX designs for maximum engagement.</p>
+            <div class="glass-panel skill-item">
+                <h4>Python Automation</h4>
+                <p>Writing robust web scrapers using BeautifulSoup/Requests and automating workflows with GitHub Actions and Telegram Bots.</p>
             </div>
-            <div class="skill-card">
-                <h3>Web Utilities & Extensions</h3>
-                <p>Building client-side JS tools, calculators, and custom Google Chrome extensions (e.g., Profile Lockers, SEO Inspectors).</p>
-            </div>
-            <div class="skill-card">
-                <h3>Python & Automation</h3>
-                <p>Web scraping with BeautifulSoup/Requests and automating workflows using GitHub Actions and Telegram Bots.</p>
+            <div class="glass-panel skill-item">
+                <h4>Chrome Extensions</h4>
+                <p>Building custom browser extensions from scratch, including profile security lockers and Blogger SEO analysis tools.</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>JobTejas Portal</h3>
-                    <p>Designed and developed a complete job notification platform using custom templates. Implemented dynamic schema markups for superior search engine indexing and handled high traffic efficiency.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Interactive Web Utilities</h3>
-                    <p>Developed a suite of client-side tools including an HTML5 Canvas Image Compressor, an Age Calculator, a Typing Speed Test, and a dynamic PDF Embed Generator.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Automated Web Scraper</h3>
-                    <p>Engineered Python automation scripts using BeautifulSoup and GitHub Actions to continuously scrape recruitment sites and push real-time alerts to a Telegram channel.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Custom Chrome Extensions</h3>
-                    <p>Built utility extensions from scratch, including a Profile Locking tool with password verification and a Blogger SEO Inspector for instant page analysis.</p>
-                </div>
-            </div>
+        <h2 class="section-title">Recent Work</h2>
+        <div class="glass-panel" style="margin-bottom: 2rem;">
+            <h3 style="color: #00c6ff; margin-bottom: 10px;">JobTejas Platform</h3>
+            <p style="color: #b0bec5; margin-bottom: 15px;">A complete job notification portal built with a custom-developed theme. Features include dynamic schema markups for rapid indexing and a highly responsive UI designed to handle significant daily user traffic smoothly.</p>
+        </div>
+        
+        <div class="glass-panel">
+            <h3 style="color: #00c6ff; margin-bottom: 10px;">Utility & Automation Suite</h3>
+            <p style="color: #b0bec5;">Successfully deployed automated recruitment scrapers linked to Telegram channels, alongside embeddable PDF generators and custom typing test modules for web integration.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div style="text-align: center;">
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Looking to hire a developer for your next WordPress, Blogger, or Frontend project? Let's connect!</p>
-            <a href="mailto:your-email@example.com" class="btn">Email Me</a>
-        </div>
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Ready to Start a Project?</h2>
+        <p style="color: #b0bec5; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Need a custom Blogger XML template, a fresh WordPress theme, or a custom web tool? Let's discuss your requirements.</p>
+        <a href="mailto:aapka-email@example.com" class="btn">Send an Email</a>
     </section>
 
     <footer>
@@ -298,7 +311,7 @@
             <a href="#" target="_blank">LinkedIn</a>
             <a href="#" target="_blank">Upwork</a>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Deepak Saini. Built from scratch.</p>
+        <p style="margin-top: 2rem; color: #78909c; font-size: 0.9rem;">&copy; 2026 Deepak Saini. Coded with ❤️</p>
     </footer>
 
 </body>
