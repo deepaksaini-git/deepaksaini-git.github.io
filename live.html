@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Deepak Saini</title>
+    <style>
+        /* Same CSS reused for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; min-height: 100vh; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 3rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); text-align: center; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(15, 32, 39, 0.8); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #00c6ff; }
+        section { padding: 5rem 5%; max-width: 800px; margin: 0 auto; }
+        h2.section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; }
+        h2.section-title::after { content: ''; width: 80px; height: 4px; background: #00c6ff; display: block; margin: 10px auto 0; border-radius: 2px; }
+        .contact-link { display: inline-block; background: linear-gradient(to right, #00c6ff, #0072ff); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin: 10px; transition: transform 0.3s ease; }
+        .contact-link:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3); }
+        .contact-text { color: #b0bec5; font-size: 1.2rem; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Deepak Saini</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">Let's Work Together</h2>
+        <div class="glass-panel">
+            <p class="contact-text">Have a project in mind? Need a custom CMS theme, a web utility, or an automation script? I am available for freelance work.</p>
+            
+            <a href="mailto:aapka-email@example.com" class="contact-link">Email Me</a>
+            <a href="https://github.com/deepaksaini-git" target="_blank" class="contact-link" style="background: #333;">GitHub</a>
+            <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link" style="background: #0077b5;">LinkedIn</a>
+        </div>
+    </section>
+</body>
+</html>
