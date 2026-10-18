@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Deepak Saini</title>
+    <style>
+        /* Same CSS reused for consistency */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; min-height: 100vh; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 3rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(15, 32, 39, 0.8); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        nav a:hover, nav a.active { color: #00c6ff; }
+        section { padding: 5rem 5%; max-width: 900px; margin: 0 auto; }
+        h2.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; position: relative; }
+        h2.section-title::after { content: ''; width: 80px; height: 4px; background: #00c6ff; display: block; margin: 10px auto 0; border-radius: 2px; }
+        p { color: #b0bec5; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .highlight { color: #00c6ff; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Deepak Saini</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2 class="section-title">About Me</h2>
+        <div class="glass-panel">
+            <p>Hi, I am <span class="highlight">Deepak Saini</span>. I am a passionate Frontend Developer & CMS Expert based in India.</p>
+            <p>I don't just build websites; I build practical workflows and custom tools. My expertise lies in designing bespoke <span class="highlight">WordPress and Blogger themes</span> from scratch. Whether it is writing complex XML layouts, optimizing dynamic schema markups for search engines, or styling pixel-perfect CSS, I ensure every project is fast and responsive.</p>
+            <p>Beyond traditional web design, I actively develop <span class="highlight">Chrome Extensions</span> and write <span class="highlight">Python Automation Scripts</span> (like web scrapers integrated with Telegram) to solve real-world problems and reduce manual work.</p>
+            <p>I am always looking for exciting freelance opportunities, agency collaborations, and challenging projects that require out-of-the-box thinking.</p>
+        </div>
+    </section>
+</body>
+</html>
