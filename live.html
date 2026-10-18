@@ -3,27 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Deepak Saini</title>
+    <title>Live Updates | Deepak Saini</title>
     <style>
-        /* Same CSS reused for consistency */
+        /* Base aur Glassmorphism CSS */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; min-height: 100vh; }
-        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 3rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); text-align: center; }
+        
         header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(15, 32, 39, 0.8); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
         nav ul { display: flex; list-style: none; gap: 2rem; }
         nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
         nav a:hover, nav a.active { color: #00c6ff; }
-        section { padding: 5rem 5%; max-width: 800px; margin: 0 auto; }
-        h2.section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; }
+        
+        section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        h2.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; position: relative; }
         h2.section-title::after { content: ''; width: 80px; height: 4px; background: #00c6ff; display: block; margin: 10px auto 0; border-radius: 2px; }
-        .contact-link { display: inline-block; background: linear-gradient(to right, #00c6ff, #0072ff); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin: 10px; transition: transform 0.3s ease; }
-        .contact-link:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3); }
-        .contact-text { color: #b0bec5; font-size: 1.2rem; margin-bottom: 2rem; }
+
+        /* 3-Column Grid Layout */
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .glass-column {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            /* Button ko bottom me fix karne ke liye Flexbox */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Column Header (Blue Box) */
+        .column-header {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Post Lists */
+        .post-list {
+            list-style: none;
+            flex-grow: 1; /* Ye list ko stretch karega jisse button niche chala jaye */
+            margin-bottom: 1.5rem;
+        }
+
+        .post-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+            padding-bottom: 8px;
+        }
+
+        .post-list li:last-child {
+            border-bottom: none;
+        }
+
+        .post-list li a {
+            color: #b0bec5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .post-list li a:hover {
+            color: #00c6ff;
+        }
+
+        /* Arrow Icon before posts */
+        .post-list li a::before {
+            content: '➤';
+            color: #00c6ff;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Read More Button */
+        .read-more-btn {
+            display: inline-block;
+            background: transparent;
+            color: #00c6ff;
+            padding: 8px 20px;
+            border: 1px solid #00c6ff;
+            border-radius: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            align-self: center; /* Button ko center me rakhega */
+            margin-top: auto; /* Button ko hamesha bottom me push karega */
+        }
+
+        .read-more-btn:hover {
+            background: #00c6ff;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 198, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header / Navigation -->
     <header>
         <a href="index.html" class="logo">Deepak Saini</a>
         <nav>
@@ -31,20 +127,59 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="live.html" class="active">Live Updates</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- 3 Column Live Updates Section -->
     <section>
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="glass-panel">
-            <p class="contact-text">Have a project in mind? Need a custom CMS theme, a web utility, or an automation script? I am available for freelance work.</p>
+        <h2 class="section-title">Live Updates Board</h2>
+        
+        <div class="updates-grid">
             
-            <a href="mailto:aapka-email@example.com" class="contact-link">Email Me</a>
-            <a href="https://github.com/deepaksaini-git" target="_blank" class="contact-link" style="background: #333;">GitHub</a>
-            <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link" style="background: #0077b5;">LinkedIn</a>
+            <!-- Column 1: Latest Jobs -->
+            <div class="glass-column">
+                <h3 class="column-header">Latest Jobs</h3>
+                <ul class="post-list">
+                    <li><a href="#">SSC CGL 2026 Online Form</a></li>
+                    <li><a href="#">UPSC Civil Services Notification</a></li>
+                    <li><a href="#">Railway RRB NTPC Recruitment</a></li>
+                    <li><a href="#">IBPS PO 2026 Vacancy Details</a></li>
+                    <li><a href="#">SBI Clerk Recruitment Apply Online</a></li>
+                </ul>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+
+            <!-- Column 2: Results -->
+            <div class="glass-column">
+                <h3 class="column-header">Results</h3>
+                <ul class="post-list">
+                    <li><a href="#">SSC CHSL Tier 1 Result 2026</a></li>
+                    <li><a href="#">UPSC NDA Final Result declared</a></li>
+                    <li><a href="#">UP Police Constable Result Check</a></li>
+                    <li><a href="#">CBSE Board 10th & 12th Results</a></li>
+                    <li><a href="#">RRB Group D Final Merit List</a></li>
+                </ul>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+
+            <!-- Column 3: Results -->
+            <div class="glass-column">
+                <h3 class="column-header">Results</h3>
+                <ul class="post-list">
+                    <li><a href="#">NTA NEET UG Result Scorecard</a></li>
+                    <li><a href="#">JEE Mains Session 2 Results</a></li>
+                    <li><a href="#">CTET 2026 Examination Result</a></li>
+                    <li><a href="#">IGNOU Term End Exam Results</a></li>
+                    <li><a href="#">State TET Result & Cutoff Marks</a></li>
+                </ul>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+
         </div>
     </section>
+
 </body>
 </html>
