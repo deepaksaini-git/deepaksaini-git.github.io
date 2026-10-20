@@ -3,24 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Deepak Saini</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Deepak Saini | Theme Developer & Programmer</title>
+    <meta name="title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta name="description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer. Customizing WordPress themes, Blogger XML, and Python scripts.">
+    <meta name="author" content="Deepak Saini">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="OwYxdsDRGUfoudsGVDgvO2eLQkdhw-dv6QS_pIJk9e0" />
+    
+    <!-- Open Graph / Facebook / WhatsApp (Social SEO) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepaksaini-git.github.io/">
+    <meta property="og:title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta property="og:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
+    <!-- Niche wali image tab dikhegi jab koi aapka link share karega -->
+    <meta property="og:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deepaksaini-git.github.io/">
+    <meta property="twitter:title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta property="twitter:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
+
+    <!-- Favicon & Apple Touch Icon -->
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
     <style>
-        /* Same CSS reused for consistency */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; min-height: 100vh; }
-        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 3rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); text-align: center; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(15, 32, 39, 0.8); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
-        nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-        nav a:hover, nav a.active { color: #00c6ff; }
-        section { padding: 5rem 5%; max-width: 800px; margin: 0 auto; }
-        h2.section-title { font-size: 2.5rem; margin-bottom: 3rem; position: relative; }
-        h2.section-title::after { content: ''; width: 80px; height: 4px; background: #00c6ff; display: block; margin: 10px auto 0; border-radius: 2px; }
-        .contact-link { display: inline-block; background: linear-gradient(to right, #00c6ff, #0072ff); color: white; padding: 1rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; margin: 10px; transition: transform 0.3s ease; }
-        .contact-link:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3); }
-        .contact-text { color: #b0bec5; font-size: 1.2rem; margin-bottom: 2rem; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); 
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; } 
+        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; min-height: 100vh; overflow-x: hidden; } 
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 2rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); } 
+        header #header-placeholder { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: rgba(15, 32, 39, 0.8); position: sticky; top: 0; z-index: 1000; } 
+        .logo { font-size: 1.8rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } 
+        .logo a{ text-decoration:none; } 
+        
+        nav ul { display: flex; list-style: none; gap: 2rem; } 
+        nav a { color: #e0e0e0; text-decoration: none; font-weight: 600; transition: color 0.3s ease; } 
+        nav a:hover { color: #00c6ff; } 
+        section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+        .hero { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 75vh; } 
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; line-height: 1.2; } 
+        .hero h1 span { color: #00c6ff; } 
+        .hero p { font-size: 1.2rem; color: #b0bec5; max-width: 700px; margin-bottom: 2.5rem; } 
+        .btn { background: linear-gradient(to right, #00c6ff, #0072ff); color: white; padding: 1rem 2.5rem; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; border: none; cursor: pointer; } 
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3); } 
+        h2.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; position: relative; } 
+        h2.section-title::after { content: ''; width: 80px; height: 4px; background: #00c6ff; display: block; margin: 10px auto 0; border-radius: 2px; } 
+        .theme-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; } .theme-card { text-align: left; transition: transform 0.3s ease; } 
+        .theme-card:hover { transform: translateY(-10px); border-color: #00c6ff; } 
+        .theme-card h3 { color: #00c6ff; font-size: 1.5rem; margin-bottom: 1rem; } 
+        .theme-features { list-style: none; margin-top: 1rem; color: #cfd8dc; } 
+        .theme-features li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; } 
+        .theme-features li::before { content: '✓'; position: absolute; left: 0; color: #00c6ff; font-weight: bold; } 
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; } 
+        .skill-item h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #ffffff; } 
+        .skill-item p { color: #b0bec5; font-size: 0.95rem; }
+
+        .custom-footer { background: rgba(15, 32, 39, 0.9); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 4rem 5% 1.5rem; margin-top: 4rem; color: #b0bec5; font-family: 'Poppins', sans-serif; } 
+        .footer-upper { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem; } 
+        .footer-left { max-width: 350px; } 
+        .footer-left .f-logo { font-size: 2.2rem; font-weight: 700; background: linear-gradient(to right, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; display: inline-block; } 
+        .footer-left .f-title { color: #ffffff; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600; } 
+        .footer-left .f-desc { font-size: 0.95rem; line-height: 1.6; } 
+        .footer-right { display: flex; gap: 4rem; flex-wrap: wrap; } 
+        .f-column h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 1.2rem; position: relative; } 
+        .f-column h4::after { content: ''; position: absolute; left: 0; bottom: -5px; width: 30px; height: 2px; background: #00c6ff; } 
+        .f-column ul { list-style: none; padding: 0; } 
+        .f-column ul li { margin-bottom: 0.8rem; } 
+        .f-column ul li a { color: #b0bec5; text-decoration: none; transition: color 0.3s ease; font-size: 0.95rem; } 
+        .f-column ul li a:hover { color: #00c6ff; } 
+        .social-icons { display: flex; gap: 1rem; } 
+        .social-icons a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50%; color: #00c6ff; text-decoration: none; font-weight: bold; transition: all 0.3s ease; } 
+        .social-icons a:hover { background: #00c6ff; color: #ffffff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 198, 255, 0.3); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); flex-wrap: wrap; gap: 1rem; } 
+        .bottom-left { font-size: 0.9rem; } 
+        .bottom-right ul { display: flex; list-style: none; gap: 1.5rem; padding: 0; } 
+        .bottom-right ul li a { color: #b0bec5; text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; } 
+        .bottom-right ul li a:hover { color: #00c6ff; }
+        /* Responsive Design for Mobile */ 
+        @media (max-width: 768px) { 
+        .footer-upper { flex-direction: column; } 
+        .footer-right { gap: 2rem; flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
     </style>
 </head>
 <body>
