@@ -118,7 +118,7 @@
     </style>
 </head>
 <body>
-
+<div id='header-placeholder'></div>
     <div class="content-container">
         <h1>Govt Job Photo & Signature Resizer – Compress to 20KB/50KB Free</h1>
         
@@ -198,6 +198,7 @@
             <a href="https://IndGovtJobs-com.blogspot.com" target="_blank" class="promo-btn">Visit IndGovtJobs - Job Notifications</a>
         </div>
     </div>
-
+<div id='footer-placeholder'></div>
+<script src="load-components.js"></script>
 </body>
 </html>
