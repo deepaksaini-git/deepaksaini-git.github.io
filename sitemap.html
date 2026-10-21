@@ -1,0 +1,139 @@
+---
+layout: null
+title: Website Sitemap
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Sitemap | Deepak Saini</title>
+    <meta name="description" content="Sitemap of Deepak Saini's developer portfolio and web utilities.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .sitemap-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(15, 42, 77, 0.1);
+        }
+
+        .header h1 {
+            color: #0f2a4d;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .sitemap-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            border-left: 4px solid #ef4444;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+            border-left-color: #0f2a4d;
+        }
+
+        .page-title {
+            color: #0f2a4d;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .page-url {
+            color: #888;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+
+        /* Back to home button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 10px 20px;
+            background: #0f2a4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #ef4444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sitemap-container">
+        <div class="header">
+            <h1>Site Directory</h1>
+            <p>Explore all pages, tools, and resources available on this website.</p>
+        </div>
+
+        <div class="links-grid">
+            <!-- Jekyll Loop: Ye automatically aapke sabhi pages ko yahan layega -->
+            {% for page in site.html_pages %}
+                <!-- Ye condition check karti hai ki jis page me title hai, sirf wahi dikhe (jaise 404 page hide ho jaye) -->
+                {% if page.title %}
+                <a href="{{ site.baseurl }}{{ page.url }}" class="sitemap-card">
+                    <span class="page-title">{{ page.title }}</span>
+                    <span class="page-url">{{ site.url }}{{ page.url }}</span>
+                </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/" class="back-btn">← Back to Homepage</a>
+        </div>
+    </div>
+
+</body>
+</html>
