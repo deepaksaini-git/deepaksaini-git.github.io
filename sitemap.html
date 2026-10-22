@@ -2,39 +2,34 @@
 layout: null
 title: Website Sitemap
 ---
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HTML Sitemap | Deepak Saini</title>
-<meta content="Sitemap of Deepak Saini's developer portfolio and web utilities." name="description"/>
-
-<link href="/style.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Sitemap | Deepak Saini</title>
+    <meta name="description" content="Sitemap of Deepak Saini's developer portfolio and web utilities.">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body data-page="sitemap">
-<div class="sitemap-container">
-<div class="header">
-<h1>Site Directory</h1>
-<p>Explore all pages, tools, and resources available on this website.</p>
-</div>
-<div class="links-grid">
-<!-- Jekyll Loop: Ye automatically aapke sabhi pages ko yahan layega -->
+    <div class="sitemap-container">
+        <div class="header">
+            <h1>Site Directory</h1>
+            <p>Explore all pages, tools, and resources available on this website.</p>
+        </div>
+        <div class="links-grid">
             {% for page in site.html_pages %}
-                <!-- Ye condition check karti hai ki jis page me title hai, sirf wahi dikhe (jaise 404 page hide ho jaye) -->
                 {% if page.title %}
                 <a class="sitemap-card" href="{{ site.baseurl }}{{ page.url }}">
-<span class="page-title">{{ page.title }}</span>
-<span class="page-url">{{ site.url }}{{ page.url }}</span>
-</a>
+                    <span class="page-title">{{ page.title }}</span>
+                    <span class="page-url">{{ site.url }}{{ page.url }}</span>
+                </a>
                 {% endif %}
             {% endfor %}
         </div>
-<div class="moved-inline-sitemap-1">
-<a class="back-btn" href="/">← Back to Homepage</a>
-</div>
-</div>
+        <div class="moved-inline-sitemap-1">
+            <a class="back-btn" href="/">← Back to Homepage</a>
+        </div>
+    </div>
 </body>
 </html>

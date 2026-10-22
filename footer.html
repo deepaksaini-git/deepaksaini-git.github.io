@@ -1,92 +1,48 @@
 <footer class="custom-footer">
-<!-- Footer Upper -->
-<div class="footer-upper">
-<!-- Left: Logo, Title, Description -->
-<div class="footer-left">
-<div class="f-logo">DS</div>
-<div class="f-title">Deepak Saini Git</div>
-<p class="f-desc">Web Designer &amp; Automation Developer. Customizing WordPress themes, Blogger XML, and Python scripts to make the web faster and more efficient.</p>
-</div>
-<!-- Right: 2 Columns Menu + Social Media -->
-<div class="footer-right">
-<!-- Menu Column 1 -->
-<div class="f-column">
-<h4>Explore</h4>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-</ul>
-</div>
-<!-- Menu Column 2 -->
-<div class="f-column">
-<h4>Resources</h4>
-<ul>
-<li><a href="live.html">Live Previews</a></li>
-<li><a href="#">My Scripts</a></li>
-<li><a href="#">Themes</a></li>
-</ul>
-</div>
-<!-- Social Media Join Buttons -->
-<div class="f-column">
-<h4>Join Me</h4>
-<div class="social-icons">
-<a href="#" title="GitHub">GH</a>
-<a href="#" title="Telegram">TG</a>
-<a href="#" title="YouTube">YT</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer Bottom -->
-<div class="footer-bottom">
-<!-- Left: Copyright -->
-<div class="bottom-left">
-            © 2026 Deepak Saini. All rights reserved.
+    <div class="footer-upper">
+        <div class="footer-left">
+            <div class="f-logo">DS</div>
+            <div class="f-title">Deepak Saini Git</div>
+            <p class="f-desc">Web Designer & Automation Developer. Customizing WordPress themes, Blogger XML, and Python scripts to make the web faster and more efficient.</p>
         </div>
-<!-- Right: Horizontal Menu -->
-<div class="bottom-right">
-<ul>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="#">Terms of Use</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-</div>
+        <div class="footer-right">
+            <div class="f-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="wordpress-themes.html">Themes</a></li>
+                </ul>
+            </div>
+            <div class="f-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="live.html">Live Previews</a></li>
+                    <li><a href="govt-exam-photo-signature-resizer.html">Image Resizer</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="capcut-mod-apk.html">CapCut Guide</a></li>
+                </ul>
+            </div>
+            <div class="f-column">
+                <h4>Join Me</h4>
+                <div class="social-icons">
+                    <a href="https://github.com/deepaksaini-git" target="_blank" title="GitHub">GH</a>
+                    <a href="https://t.me/" target="_blank" title="Telegram">TG</a>
+                    <a href="https://youtube.com/" target="_blank" title="YouTube">YT</a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" title="LinkedIn">IN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="bottom-left">© 2026 Deepak Saini. All rights reserved.</div>
+        <div class="bottom-right">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 </footer>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    // SVGs defined in JS for easy swapping
-    const menuIcon = `
-        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>`;
-        
-    const closeIcon = `
-        <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>`;
-
-    let isMenuOpen = false;
-
-    hamburgerBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        
-        // CSS class toggle for sliding effect
-        navLinks.classList.toggle('active');
-
-        // Icon swap
-        if (isMenuOpen) {
-            hamburgerBtn.innerHTML = closeIcon;
-        } else {
-            hamburgerBtn.innerHTML = menuIcon;
-        }
-    });
-});
-</script>
