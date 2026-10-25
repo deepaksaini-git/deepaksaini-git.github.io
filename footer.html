@@ -1,3 +1,28 @@
+<div style="text-align: center; margin: 2rem 0;">
+    <button id="nativeShareBtn" style="background: linear-gradient(to right, #00c6ff, #0072ff); color: white; padding: 12px 25px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: transform 0.3s ease; font-size: 1rem;">
+        📲 Share This Website
+    </button>
+</div>
+
+<script>
+    document.getElementById('nativeShareBtn').addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Deepak Saini | Frontend & CMS Developer',
+                    text: 'Check out my custom WordPress/Blogger themes and web utilities!',
+                    url: 'https://deepaksaini-git.github.io' // Aap isko dynamically window.location.href bhi kar sakte hain
+                });
+            } catch (err) {
+                console.log('Error sharing:', err);
+            }
+        } else {
+            alert('Web Share API is not supported in your browser. Please copy the URL manually.');
+        }
+    });
+</script>
+
+
 <footer class="custom-footer">
     <div class="footer-upper">
         <div class="footer-left">
