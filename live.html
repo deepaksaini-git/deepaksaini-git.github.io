@@ -11,91 +11,47 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body data-page="live">
-
-</head>
-<body data-page="live">
     <header>{% include header.html %}</header>
 
     <section>
         <h2 class="section-title">Live Updates Board</h2>
+        
         <div class="updates-grid">
+            <!-- Column 1: Latest Jobs -->
             <div class="glass-column">
                 <h3 class="column-header">Latest Jobs</h3>
                 <ul class="post-list">
-                    <li><a href="#">SSC CGL 2026 Online Form</a></li>
-                    <li><a href="#">UPSC Civil Services Notification</a></li>
-                    <li><a href="#">Railway RRB NTPC Recruitment</a></li>
-                    <li><a href="#">IBPS PO 2026 Vacancy Details</a></li>
-                    <li><a href="#">SBI Clerk Recruitment Apply Online</a></li>
+                    {% for post in site.categories['latest-jobs'] limit:5 %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
-                <a class="read-more-btn" href="#">Read More</a>
+                <a href="/category/latest-jobs" class="read-more-btn">Read More</a>
             </div>
+
+            <!-- Column 2: Results -->
             <div class="glass-column">
                 <h3 class="column-header">Results</h3>
                 <ul class="post-list">
-                    <li><a href="#">SSC CHSL Tier 1 Result 2026</a></li>
-                    <li><a href="#">UPSC NDA Final Result declared</a></li>
-                    <li><a href="#">UP Police Constable Result Check</a></li>
-                    <li><a href="#">CBSE Board 10th & 12th Results</a></li>
-                    <li><a href="#">RRB Group D Final Merit List</a></li>
+                    {% for post in site.categories['results'] limit:5 %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
-                <a class="read-more-btn" href="#">Read More</a>
+                <a href="/category/results" class="read-more-btn">Read More</a>
             </div>
+
+            <!-- Column 3: Admit Cards -->
             <div class="glass-column">
-                <h3 class="column-header">Exam Updates</h3>
+                <h3 class="column-header">Admit Cards</h3>
                 <ul class="post-list">
-                    <li><a href="#">NTA NEET UG Result Scorecard</a></li>
-                    <li><a href="#">JEE Mains Session 2 Results</a></li>
-                    <li><a href="#">CTET 2026 Examination Result</a></li>
-                    <li><a href="#">IGNOU Term End Exam Results</a></li>
-                    <li><a href="#">State TET Result & Cutoff Marks</a></li>
+                    {% for post in site.categories['admit-cards'] limit:5 %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
-                <a class="read-more-btn" href="#">Read More</a>
+                <a href="/category/admit-cards" class="read-more-btn">Read More</a>
             </div>
         </div>
     </section>
 
-
-<div class="updates-grid">
-    <!-- Column 1: Latest Jobs -->
-    <div class="glass-column">
-        <h3 class="column-header">Latest Jobs</h3>
-        <ul class="post-list">
-            <!-- Ye loop sirf 'latest-jobs' category wali posts layega -->
-            {% for post in site.categories['latest-jobs'] limit:5 %}
-            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="/category/latest-jobs" class="read-more-btn">Read More</a>
-    </div>
-
-    <!-- Column 2: Results -->
-    <div class="glass-column">
-        <h3 class="column-header">Results</h3>
-        <ul class="post-list">
-            <!-- Ye loop sirf 'results' category wali posts layega -->
-            {% for post in site.categories['results'] limit:5 %}
-            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="/category/results" class="read-more-btn">Read More</a>
-    </div>
-
-    <!-- Column 3: Admit Cards -->
-    <div class="glass-column">
-        <h3 class="column-header">Admit Cards</h3>
-        <ul class="post-list">
-            <!-- Ye loop sirf 'admit-cards' category wali posts layega -->
-            {% for post in site.categories['admit-cards'] limit:5 %}
-            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="/category/admit-cards" class="read-more-btn">Read More</a>
-    </div>
-</div>
-
-
-    
     <footer>{% include footer.html %}</footer>
 </body>
 </html>
