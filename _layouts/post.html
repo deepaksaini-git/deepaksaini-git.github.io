@@ -24,10 +24,13 @@
 </head>
 <body>
     
-    <!-- Ye automatically _includes/header.html ko page load hone se pehle merge kar dega -->
+<style>
+    .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; }
+    .progress-bar { height: 4px; background: #00c6ff; width: 0%; box-shadow: 0 0 10px #00c6ff; }
+</style>
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     {% include header.html %}
 
-<!-- Automatic JSON-LD Schema for SEO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
