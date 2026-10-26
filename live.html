@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,10 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body data-page="live">
-    <header><div id="header-placeholder"></div></header>
+
+</head>
+<body data-page="live">
+    <header>{% include header.html %}</header>
 
     <section>
         <h2 class="section-title">Live Updates Board</h2>
@@ -91,7 +96,6 @@
 
 
     
-    <div id="footer-placeholder"></div>
-    <script src="load-components.js"></script>
+    <footer>{% include footer.html %}</footer>
 </body>
 </html>
