@@ -1,8 +1,11 @@
 ---
 layout: post
-title: "SSC CGL 2026 Notification Out"
+title: "UPPSC RO / ARO Recruitment 2026 Notification Out"
 date: 2026-10-26
 category: latest-jobs
+description: "Uttar Pradesh Public Service Commission (UPPSC) has released a notification for 501 Vacancies of Review Officer / Assistant Review Officer. Apply online before 26 November 2026."
+tags: [UPPSC, RO-ARO, UP-Jobs]
+image: "/assets/uppsc-banner.jpg"
 ---
 
 <div class="sp-post">
