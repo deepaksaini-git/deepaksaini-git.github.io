@@ -1,41 +1,12 @@
 ---
 layout: post
-title: "How to Create a Custom WordPress Theme"
+title: "How to create WordPress Theme"
 date: 2026-10-26
 ---
 
----
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Saini | Theme Developer & Programmer</title>
-    <meta name="title" content="Deepak Saini | Theme Developer & Programmer">
-    <meta name="description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer. Customizing WordPress themes, Blogger XML, and Python scripts.">
-    <meta name="author" content="Deepak Saini">
-    <meta name="google-site-verification" content="OwYxdsDRGUfoudsGVDgvO2eLQkdhw-dv6QS_pIJk9e0">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://deepaksaini-git.github.io/">
-    <meta property="og:title" content="Deepak Saini | Theme Developer & Programmer">
-    <meta property="og:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://deepaksaini-git.github.io/">
-    <meta name="twitter:title" content="Deepak Saini | Theme Developer & Programmer">
-    <meta name="twitter:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body data-page="index">
-    <header><div id="header-placeholder"></div></header>
+Aaj hum seekhenge ki XML template ko scratch se kaise likha jata hai...
 
+### Step 1
+Sabse pehle skin tags ko define karein.
 
-    <div id="footer-placeholder"></div>
-    <script src="load-components.js"></script>
-</body>
-</html>
-    
+(Note: Dekhiye, maine yahan koi header ya footer include nahi kiya hai. Jekyll automatically ise post.html ke andar daal kar generate kar dega).
