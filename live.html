@@ -50,6 +50,47 @@
         </div>
     </section>
 
+
+<div class="updates-grid">
+    <!-- Column 1: Latest Jobs -->
+    <div class="glass-column">
+        <h3 class="column-header">Latest Jobs</h3>
+        <ul class="post-list">
+            <!-- Ye loop sirf 'latest-jobs' category wali posts layega -->
+            {% for post in site.categories['latest-jobs'] limit:5 %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/category/latest-jobs" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Column 2: Results -->
+    <div class="glass-column">
+        <h3 class="column-header">Results</h3>
+        <ul class="post-list">
+            <!-- Ye loop sirf 'results' category wali posts layega -->
+            {% for post in site.categories['results'] limit:5 %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/category/results" class="read-more-btn">Read More</a>
+    </div>
+
+    <!-- Column 3: Admit Cards -->
+    <div class="glass-column">
+        <h3 class="column-header">Admit Cards</h3>
+        <ul class="post-list">
+            <!-- Ye loop sirf 'admit-cards' category wali posts layega -->
+            {% for post in site.categories['admit-cards'] limit:5 %}
+            <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/category/admit-cards" class="read-more-btn">Read More</a>
+    </div>
+</div>
+
+
+    
     <div id="footer-placeholder"></div>
     <script src="load-components.js"></script>
 </body>
