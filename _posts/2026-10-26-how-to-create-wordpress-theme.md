@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SSC CGL 2026 Online Form Started"
-category: latest-jobs
+category: results
 ---
 
 Aaj hum seekhenge ki XML template ko scratch se kaise likha jata hai...
