@@ -2,3 +2,6 @@ url: "https://deepaksaini-git.github.io"
 plugins:
   - jekyll-sitemap
 permalink: /:title.html
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
