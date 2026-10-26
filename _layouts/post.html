@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ page.title }} | Deepak Saini</title>
+    <!-- Aapki main CSS wagaira yahan ayegi -->
+</head>
+<body>
+    
+    <!-- Ye automatically _includes/header.html ko page load hone se pehle merge kar dega -->
+    {% include header.html %}
+
+    <div class="glass-panel" style="max-width: 800px; margin: 20px auto; padding: 20px;">
+        <h1>{{ page.title }}</h1>
+        
+        <!-- Yahan aapke post ka actual content ayega -->
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Ye automatically _includes/footer.html ko yahan merge kar dega -->
+    {% include footer.html %}
+
+</body>
+</html>
