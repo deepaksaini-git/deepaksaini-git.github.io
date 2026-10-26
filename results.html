@@ -1,0 +1,43 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Latest Jobs | Deepak Saini</title>
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>{% include header.html %}</header>
+
+    <section>
+        <h2 class="section-title">All Results Jobs</h2>
+        
+        <div class="glass-panel" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+            <ul class="post-list" style="list-style: none; padding: 0;">
+                
+                <!-- Ye loop 'latest-jobs' category ki saari posts fetch karega -->
+                {% for post in site.categories['results'] %}
+                <li style="margin-bottom: 15px; border-bottom: 1px dashed rgba(255, 255, 255, 0.2); padding-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    
+                    <a href="{{ site.baseurl }}{{ post.url }}" style="color: #00c6ff; text-decoration: none; font-size: 1.1rem; font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.8rem;">➤</span> {{ post.title }}
+                    </a>
+                    
+                    <!-- Date show karne ke liye badge style -->
+                    <span style="color: #b0bec5; font-size: 0.85rem; background: rgba(0, 0, 0, 0.3); padding: 5px 12px; border-radius: 20px;">
+                        🕒 {{ post.date | date: "%d %b, %Y" }}
+                    </span>
+                    
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+    </section>
+
+    <footer>{% include footer.html %}</footer>
+</body>
+</html>
