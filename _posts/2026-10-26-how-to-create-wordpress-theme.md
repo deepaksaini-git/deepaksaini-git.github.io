@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to create WordPress Theme"
-date: 2026-10-26
+title: "SSC CGL 2026 Online Form Started"
+category: latest-jobs
 ---
 
 Aaj hum seekhenge ki XML template ko scratch se kaise likha jata hai...
