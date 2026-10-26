@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ page.title }} | Deepak Saini</title>
+    <style>
+        /* Base Glassmorphism Theme */
+        body { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; padding: 2% 5%; line-height: 1.7; }
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 3rem; max-width: 800px; margin: 20px auto; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); }
+        h1 { color: #00c6ff; margin-bottom: 10px; font-size: 2.2rem; }
+        .date { color: #b0bec5; font-size: 0.9rem; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        a.back-btn { color: #00c6ff; text-decoration: none; font-weight: bold; }
+        .content h2 { color: #00c6ff; margin-top: 25px; }
+        .content p { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div style="max-width: 800px; margin: 0 auto;">
+        <a href="{{ site.baseurl }}/" class="back-btn">← Back to Home</a>
+    </div>
+
+    <div class="glass-panel">
+        <h1>{{ page.title }}</h1>
+        <div class="date">Published on {{ page.date | date: "%B %d, %Y" }}</div>
+        
+        <!-- Yahan aapka actual blog content load hoga -->
+        <div class="content">
+            {{ content }}
+        </div>
+    </div>
+</body>
+</html>
