@@ -16,6 +16,17 @@ category: latest-jobs
 * TOC
 {:toc}
 
+## UPPSC RO / ARO Recruitment 2026 : Vacancy Details
+<div class="sp-box">
+  <table>...</table>
+</div>
+
+## Eligibility
+<div class="sp-box">
+  <table>...</table>
+</div>
+
+
   
 <div class="sp-box"><div class="sp-h">UPPSC RO / ARO Recruitment 2026 : Vacancy Details</div><table><tr><th>Post Name</th><th>No. Of Posts</th></tr><tr><td>UPPSC RO / ARO</td><td>501 Posts</td></tr></table></div>
 <div class="sp-box"><div class="sp-h">Eligibility</div><table><tr><th>Post Name</th><th>Eligibility Criteria</th></tr><tr><td>RO / ARO</td><td>Graduate Degree From Recognized University</td></tr></table></div>
