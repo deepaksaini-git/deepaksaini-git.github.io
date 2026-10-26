@@ -27,6 +27,22 @@
     <!-- Ye automatically _includes/header.html ko page load hone se pehle merge kar dega -->
     {% include header.html %}
 
+<!-- Automatic JSON-LD Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": {
+    "@type": "Person",
+    "name": "Deepak Saini",
+    "url": "https://deepaksaini-git.github.io"
+  },
+  "description": "{{ content | strip_html | truncatewords: 30 | escape }}"
+}
+</script>
+    
     <div class="glass-panel" style="max-width: 800px; margin: 20px auto; padding: 20px;">
         <h1>{{ page.title }}</h1>
         
