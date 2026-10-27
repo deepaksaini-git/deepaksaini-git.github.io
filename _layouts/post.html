@@ -1,56 +1,95 @@
----
-layout: default
----
-<div class="sp-post">
-    <!-- 1. Banner Image Auto-Load -->
-    {% if page.image %}
-    <div style="margin-bottom: 25px; text-align: center;">
-        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-    </div>
-    {% endif %}
-
-    <h1 class="sp-title">{{ page.title }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Saini | Theme Developer & Programmer</title>
+    <meta name="title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta name="description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer. Customizing WordPress themes, Blogger XML, and Python scripts.">
+    <meta name="author" content="Deepak Saini">
+    <meta name="google-site-verification" content="OwYxdsDRGUfoudsGVDgvO2eLQkdhw-dv6QS_pIJk9e0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deepaksaini-git.github.io/">
+    <meta property="og:title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta property="og:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://deepaksaini-git.github.io/">
+    <meta name="twitter:title" content="Deepak Saini | Theme Developer & Programmer">
+    <meta name="twitter:description" content="Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Banner.jpg">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
     
-    <div class="sp-date">
-        Post Date: {{ page.date | date: "%B %d, %Y" }}
-        <!-- Reading Time Indicator -->
-        {% assign words = content | number_of_words %}
-        {% assign read_time = words | divided_by: 200 %}
-        {% if read_time == 0 %}{% assign read_time = 1 %}{% endif %}
-        <span style="color: #00c6ff; font-weight: bold; margin-left: 15px;">⏱️ {{ read_time }} Min Read</span>
+<style>
+    .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; }
+    .progress-bar { height: 4px; background: #00c6ff; width: 0%; box-shadow: 0 0 10px #00c6ff; }
+</style>
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+    {% include header.html %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "author": {
+    "@type": "Person",
+    "name": "Deepak Saini",
+    "url": "https://deepaksaini-git.github.io"
+  },
+  "description": "{{ content | strip_html | truncatewords: 30 | escape }}"
+}
+</script>
+    
+    <div class="glass-panel" style="max-width: 800px; margin: 20px auto; padding: 20px;">
+        <h1>{{ page.title }}</h1>
+        
+        <!-- Yahan aapke post ka actual content ayega -->
+        <div class="content">
+            {{ content }}
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="post-content">
-        {{ content }}
-    </div>
+    <!-- Ye automatically _includes/footer.html ko yahan merge kar dega -->
+    {% include footer.html %}
 
-    <!-- 2. One-Click Social Share -->
-    <div style="margin: 40px 0 20px 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-        <h4 style="margin-bottom: 15px; color: #fff;">Share this update:</h4>
-        <a href="https://api.whatsapp.com/send?text=Check out this job: {{ page.title | url_encode }} - {{ site.url }}{{ page.url }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #25D366; color: #fff; border-radius: 8px; text-decoration: none; margin-right: 10px; font-weight: bold;">🟢 WhatsApp</a>
-        <a href="https://t.me/share/url?url={{ site.url }}{{ page.url }}&text={{ page.title | url_encode }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #0088cc; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">✈️ Telegram</a>
-    </div>
 
-    <!-- 3. Related Jobs (You May Also Like) -->
-    <div style="margin-top: 40px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
-        <h3 style="color: #00c6ff; margin-top: 0;">You May Also Like</h3>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-            {% assign count = 0 %}
-            {% for related_post in site.categories[page.category] %}
-                {% if related_post.url != page.url and count < 3 %}
-                    <li style="margin-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
-                        <a href="{{ site.baseurl }}{{ related_post.url }}" style="color: #fff; text-decoration: none; font-size: 1rem;">➤ {{ related_post.title }}</a>
-                    </li>
-                    {% assign count = count | plus: 1 %}
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </div>
+<!-- 1. One-Click Social Share -->
+<div style="margin: 40px 0 20px 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <h4 style="margin-bottom: 15px; color: #fff;">Share this update:</h4>
+    <a href="https://api.whatsapp.com/send?text=Check out this job: {{ page.title | url_encode }} - {{ site.url }}{{ page.url }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #25D366; color: #fff; border-radius: 8px; text-decoration: none; margin-right: 10px; font-weight: bold; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);">🟢 WhatsApp</a>
+    
+    <a href="https://t.me/share/url?url={{ site.url }}{{ page.url }}&text={{ page.title | url_encode }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #0088cc; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);">✈️ Telegram</a>
 </div>
 
-<!-- Scroll Progress Bar Script -->
+<!-- 2. Related Jobs (You May Also Like) -->
+<div style="margin-top: 40px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+    <h3 style="color: #00c6ff; margin-top: 0;">You May Also Like</h3>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+        {% assign count = 0 %}
+        {% for related_post in site.categories[page.category] %}
+            <!-- Ye loop current post ko chhod kar usi category ki 3 aur posts dikhayega -->
+            {% if related_post.url != page.url and count < 3 %}
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+                    <a href="{{ site.baseurl }}{{ related_post.url }}" style="color: #fff; text-decoration: none; font-size: 1rem;">➤ {{ related_post.title }}</a>
+                </li>
+                {% assign count = count | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+    
+
+    <div id="footer-placeholder"></div>
+    <script src="load-components.js"></script>
+
 <script>
+    // Scroll progress calculate karne ka function
     window.onscroll = function() {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -58,3 +97,5 @@ layout: default
         document.getElementById("myBar").style.width = scrolled + "%";
     };
 </script>
+</body>
+</html>
