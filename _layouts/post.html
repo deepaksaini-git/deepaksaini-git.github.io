@@ -58,10 +58,35 @@
     <!-- Ye automatically _includes/footer.html ko yahan merge kar dega -->
     {% include footer.html %}
 
+
+<!-- 1. One-Click Social Share -->
+<div style="margin: 40px 0 20px 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <h4 style="margin-bottom: 15px; color: #fff;">Share this update:</h4>
+    <a href="https://api.whatsapp.com/send?text=Check out this job: {{ page.title | url_encode }} - {{ site.url }}{{ page.url }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #25D366; color: #fff; border-radius: 8px; text-decoration: none; margin-right: 10px; font-weight: bold; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);">🟢 WhatsApp</a>
+    
+    <a href="https://t.me/share/url?url={{ site.url }}{{ page.url }}&text={{ page.title | url_encode }}" target="_blank" style="display: inline-block; padding: 10px 20px; background: #0088cc; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);">✈️ Telegram</a>
+</div>
+
+<!-- 2. Related Jobs (You May Also Like) -->
+<div style="margin-top: 40px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px;">
+    <h3 style="color: #00c6ff; margin-top: 0;">You May Also Like</h3>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+        {% assign count = 0 %}
+        {% for related_post in site.categories[page.category] %}
+            <!-- Ye loop current post ko chhod kar usi category ki 3 aur posts dikhayega -->
+            {% if related_post.url != page.url and count < 3 %}
+                <li style="margin-bottom: 12px; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 8px;">
+                    <a href="{{ site.baseurl }}{{ related_post.url }}" style="color: #fff; text-decoration: none; font-size: 1rem;">➤ {{ related_post.title }}</a>
+                </li>
+                {% assign count = count | plus: 1 %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+    
     
     <div id="footer-placeholder"></div>
     <script src="load-components.js"></script>
-
 
 <script>
     // Scroll progress calculate karne ka function
