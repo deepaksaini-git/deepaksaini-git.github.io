@@ -38,6 +38,61 @@
         </div>
     </section>
 
+
+<!-- Pagination Buttons -->
+<div id="pagination-controls" style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
+    <button onclick="prevPage()" id="prev-btn" style="padding: 10px 20px; background: rgba(0,198,255,0.2); color: #00c6ff; border: 1px solid #00c6ff; border-radius: 5px; cursor: pointer; font-weight: bold;">❮ Previous</button>
+    <span id="page-info" style="color: #b0bec5; font-size: 0.9rem;"></span>
+    <button onclick="nextPage()" id="next-btn" style="padding: 10px 20px; background: rgba(0,198,255,0.2); color: #00c6ff; border: 1px solid #00c6ff; border-radius: 5px; cursor: pointer; font-weight: bold;">Next ❯</button>
+</div>
+<!-- Pagination JavaScript -->
+<script>
+    // 1 Page par kitni jobs dikhani hain
+    const itemsPerPage = 10; 
+    let currentPage = 1;
+    // Apni list ke <li> items ko select karna
+    const listItems = document.querySelectorAll('.post-list li');
+    const totalPages = Math.ceil(listItems.length / itemsPerPage);
+
+    function showPage(page) {
+        listItems.forEach((item, index) => {
+            // Check karega kaunse items dikhane hain
+            if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
+                item.style.display = 'flex'; // Agar aapne pehle flex lagaya tha
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        // Page number update karega
+        document.getElementById('page-info').innerText = `Page ${page} of ${totalPages}`;
+        // Button disable/enable logic
+        document.getElementById('prev-btn').style.opacity = page === 1 ? '0.3' : '1';
+        document.getElementById('prev-btn').style.cursor = page === 1 ? 'not-allowed' : 'pointer';
+        
+        document.getElementById('next-btn').style.opacity = page === totalPages ? '0.3' : '1';
+        document.getElementById('next-btn').style.cursor = page === totalPages ? 'not-allowed' : 'pointer';
+    }
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    }
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    }
+    // Page load hote hi Script run hogi
+    if (listItems.length > 0) {
+        showPage(1);
+    } else {
+        document.getElementById('pagination-controls').style.display = 'none';
+    }
+</script>
+
+    
     <footer>{% include footer.html %}</footer>
 </body>
 </html>
