@@ -14,6 +14,39 @@
 
 
 
+
+
+<!-- Floating Telegram Widget -->
+<a href="https://t.me/YOUR_CHANNEL_LINK_HERE" target="_blank" class="telegram-float">
+    ✈️ Join Telegram
+</a>
+<style>
+    .telegram-float {
+        position: fixed;
+        bottom: 25px;
+        left: 25px; /* Mobile par left side thumbs ke paas sahi rehta hai */
+        background: #0088cc;
+        color: white;
+        padding: 12px 22px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 136, 204, 0.5);
+        z-index: 1000;
+        animation: pulse-animation 2s infinite;
+    }
+    .telegram-float:hover {
+        color: #fff;
+    }
+    @keyframes pulse-animation {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+        70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 136, 204, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+    }
+</style>
+
+
 <footer class="custom-footer">
     <div class="footer-upper">
         <div class="footer-left">
