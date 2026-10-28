@@ -4,8 +4,6 @@
    All styles consolidated in this single file.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 /* ---------- 1. RESET ---------- */
 *, *::before, *::after {
     margin: 0;
@@ -151,8 +149,7 @@ body::before {
 
 /* ---------- 4. LAYOUT ---------- */
 .container,
-section,
-main {
+section {
     width: min(1120px, calc(100% - 2rem));
     margin-inline: auto;
 }
@@ -168,9 +165,17 @@ header {
     z-index: 1000;
 }
 
-.header-container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1rem clamp(1rem, 4vw, 3rem); 
-background: rgba(6, 13, 24, 0.82); border-bottom: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); 
-position: sticky; top: 0; z-index: 9999;}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem clamp(1rem, 4vw, 3rem);
+    background: rgba(6, 13, 24, 0.82);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
 
 .left-section {
     display: flex;
@@ -282,6 +287,9 @@ nav a.active, .nav-links a.active {
     transition: var(--transition);
 }
 .hamburger:hover { background: rgba(56, 189, 248, 0.1); }
+.hamburger .icon-close { display: none; }
+.hamburger[aria-expanded="true"] .icon-open { display: none; }
+.hamburger[aria-expanded="true"] .icon-close { display: block; }
 
 /* ---------- 6. HERO ---------- */
 .hero {
@@ -1158,18 +1166,6 @@ hr {
 .mt-2 { margin-top: 2rem; }
 .mb-2 { margin-bottom: 2rem; }
 
-/* Converted inline helpers */
-.moved-inline-sitemap-1 { text-align: center; }
-.moved-inline-index-2 { margin-bottom: 2rem; }
-.moved-inline-index-3 { color: var(--accent); margin-bottom: 10px; }
-.moved-inline-index-4 { color: var(--text-muted); margin-bottom: 15px; }
-.moved-inline-index-5 { color: var(--accent); margin-bottom: 10px; }
-.moved-inline-index-6 { color: var(--text-muted); }
-.moved-inline-index-7 { text-align: center; }
-.moved-inline-index-8 { color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-.moved-inline-header-9 { color: var(--accent); }
-.moved-inline-contact-10 { background: rgba(56, 189, 248, 0.15); }
-.moved-inline-contact-11 { background: rgba(56, 189, 248, 0.15); }
 
 /* ---------- 29. ANIMATIONS ---------- */
 @keyframes fadeUp {
@@ -1284,3 +1280,230 @@ hr {
 .share-fb { background: #1877F2; }
 .share-tw { background: #000000; border: 1px solid #333; }
 .share-in { background: #0A66C2; }
+
+/* =========================================================
+   ADDITIONS (moved here from inline <style> / style="" attrs)
+   ========================================================= */
+
+/* ---------- Utilities ---------- */
+[hidden] { display: none !important; }
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 2000;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #041a0f;
+    font-weight: 700;
+}
+.skip-link:focus { top: 0.75rem; color: #041a0f; }
+
+.btn-group--center { justify-content: center; }
+.btn-disabled { opacity: 0.55; cursor: not-allowed; pointer-events: none; }
+.stack-gap { margin-bottom: 2rem; }
+.accent-title { color: var(--accent); margin-bottom: 0.6rem; }
+.section-lead { color: var(--text-muted); margin: 0 auto 2rem; max-width: 600px; }
+.section-cta { text-align: center; margin-top: 2rem; }
+.empty-note { color: var(--text-muted); text-align: center; padding: 1rem 0; }
+.contact-link--alt { background: rgba(56, 189, 248, 0.15); }
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-wrap table { min-width: 520px; }
+.skill-item h3 { font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+
+/* ---------- Index: post cards ---------- */
+.post-card h3 a { color: var(--accent-2); }
+.post-card h3 a:hover { color: var(--accent); }
+.post-card-date { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
+
+/* ---------- Post list pages (latest jobs / results / admit cards) ---------- */
+.list-panel { max-width: 900px; margin: 0 auto; }
+.job-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.job-list li a { font-size: 1.05rem; font-weight: 500; color: var(--accent-2); }
+.date-badge {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.page-info { color: var(--text-muted); font-size: 0.9rem; }
+.page-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: none;
+    font-size: 0.9rem;
+}
+.page-btn:hover:not(:disabled) { background: var(--accent); color: #041a0f; }
+.page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+/* ---------- Theme preview tiles (replace dead placeholder.com images) ---------- */
+.theme-image {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+.theme-image--green { background: linear-gradient(135deg, rgba(34, 197, 94, 0.35), rgba(10, 22, 40, 0.9)); }
+.theme-image--blue  { background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(10, 22, 40, 0.9)); }
+
+/* ---------- Floating Telegram button ---------- */
+.telegram-float {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    background: #0088cc;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.5);
+    animation: pulse-ring 2s infinite;
+}
+.telegram-float:hover { color: #fff; transform: translateY(-2px); }
+@keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
+    70%  { box-shadow: 0 0 0 12px rgba(0, 136, 204, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+}
+
+/* ---------- Post layout ---------- */
+.progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; z-index: 2000; }
+.progress-bar { height: 4px; width: 0; background: var(--accent-grad); box-shadow: 0 0 10px rgba(34, 197, 94, 0.6); }
+
+.breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }
+.breadcrumb a { color: var(--text-muted); }
+.breadcrumb a:hover { color: var(--accent); }
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.post-cat {
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: var(--blue);
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+.post-cover { width: 100%; border-radius: var(--radius); margin: 0 auto 1.5rem; box-shadow: var(--shadow); }
+
+.post-content img { border-radius: var(--radius-sm); margin: 1rem auto; }
+.post-content pre {
+    overflow-x: auto;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(6, 13, 24, 0.7);
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.share-block { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); text-align: center; }
+.share-title { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.share-block .share-container { margin: 0.5rem 0 0; }
+.share-tg { background: #0088cc; }
+
+.related-posts {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+}
+.related-posts h2 { font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--accent-2); }
+.related-posts ul { list-style: none; margin: 0; padding: 0; }
+.related-posts li { margin: 0; padding: 0.5rem 0; border-bottom: 1px dashed var(--border); }
+.related-posts li:last-child { border-bottom: none; }
+.related-posts a { color: var(--text-dim); }
+.related-posts a::before { content: '➤ '; color: var(--accent); font-size: 0.75rem; }
+.related-posts a:hover { color: var(--accent); }
+
+/* Legal pages */
+.legal h2 { font-size: 1.2rem; }
+
+/* ---------- Sitemap ---------- */
+.sitemap-heading { font-size: 1.3rem; margin: 2rem 0 0.5rem; color: var(--accent-2); }
+
+/* ---------- Sarkari-style job post blocks (.sp-*) ---------- */
+.sp-post { color: var(--text-dim); }
+.sp-intro { font-size: 1.02rem; line-height: 1.8; margin-bottom: 1.25rem; }
+.sp-date { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem; }
+.sp-box {
+    margin: 1.25rem 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: rgba(6, 13, 24, 0.45);
+    overflow: hidden;
+}
+.sp-h {
+    padding: 0.7rem 1rem;
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.22), rgba(56, 189, 248, 0.18));
+    color: var(--text);
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-align: center;
+}
+.sp-box > ul, .sp-two ul { margin: 0; padding: 1rem 1rem 1rem 2.2rem; }
+.sp-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.sp-two > div + div { border-left: 1px solid var(--border); }
+.sp-box table { margin: 0; border-radius: 0; }
+.sp-box th, .sp-box td { border-left: none; border-right: none; }
+.sp-links td:first-child { font-weight: 600; color: var(--text); width: 55%; }
+.sp-links a { font-weight: 700; }
+.sp-faq p { padding: 0.9rem 1rem; margin: 0; border-bottom: 1px dashed var(--border); }
+.sp-faq p:last-child { border-bottom: none; }
+@media (max-width: 600px) {
+    .sp-two > div + div { border-left: none; border-top: 1px solid var(--border); }
+}
+
+/* ---------- Resizer tool UI ---------- */
+.tool-ui {
+    margin: 1.5rem 0 2rem;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(56, 189, 248, 0.04);
+}
+.tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.field--wide { grid-column: 1 / -1; }
+.tool-hint { font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0 1rem; }
+.tool-status { margin-top: 0.9rem; font-size: 0.92rem; color: var(--text-muted); }
+.tool-status.is-error { color: #fca5a5; }
+.tool-output { margin-top: 1.25rem; text-align: center; }
+.tool-output img { max-height: 320px; width: auto; margin: 0 auto 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border); background: #fff; }
+.tool-info { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-dim); }
+@media (max-width: 480px) { .tool-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 760px) {
+    .telegram-float { bottom: 1rem; left: 1rem; padding: 0.6rem 1.1rem; font-size: 0.9rem; }
+}

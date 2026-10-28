@@ -1,57 +1,28 @@
 ---
+layout: default
+title: Live Updates
+description: "Live board for latest jobs, results, and exam updates in India."
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Updates | Deepak Saini</title>
-    <meta name="description" content="Live board for latest jobs, results, and exam updates in India.">
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body data-page="live">
-    <header>{% include header.html %}</header>
-
-    <section>
-        <h2 class="section-title">Live Updates Board</h2>
-        
-        <div class="updates-grid">
-            <!-- Column 1: Latest Jobs -->
-            <div class="glass-column">
-                <h3 class="column-header">Latest Jobs</h3>
-                <ul class="post-list">
-                    {% for post in site.categories['latest-jobs'] limit:5 %}
-                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
-                <a href="/latest-jobs.html" class="read-more-btn">Read More</a>
-            </div>
-
-            <!-- Column 2: Results -->
-            <div class="glass-column">
-                <h3 class="column-header">Results</h3>
-                <ul class="post-list">
-                    {% for post in site.categories['results'] limit:5 %}
-                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
-                <a href="/results.html" class="read-more-btn">Read More</a>
-            </div>
-
-            <!-- Column 3: Admit Cards -->
-            <div class="glass-column">
-                <h3 class="column-header">Admit Cards</h3>
-                <ul class="post-list">
-                    {% for post in site.categories['admit-cards'] limit:5 %}
-                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
-                <a href="/admit-cards.html" class="read-more-btn">Read More</a>
-            </div>
+<section>
+    <h1 class="section-title">Live Updates Board</h1>
+    <div class="updates-grid">
+        {%- for entry in site.data.categories %}
+        {%- assign key = entry[0] -%}
+        {%- assign meta = entry[1] -%}
+        {%- assign items = site.categories[key] %}
+        <div class="glass-column">
+            <h2 class="column-header">{{ meta.title }}</h2>
+            {%- if items and items.size > 0 %}
+            <ul class="post-list">
+                {%- for post in items limit: 5 %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                {%- endfor %}
+            </ul>
+            {%- else %}
+            <p class="empty-note">No updates yet.</p>
+            {%- endif %}
+            <a href="{{ meta.url }}" class="read-more-btn">Read More</a>
         </div>
-    </section>
-
-    <footer>{% include footer.html %}</footer>
-</body>
-</html>
+        {%- endfor %}
+    </div>
+</section>

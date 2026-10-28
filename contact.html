@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Deepak Saini</title>
-    <meta name="description" content="Get in touch with Deepak Saini for custom WordPress/Blogger themes, web tools, or automation projects.">
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body data-page="contact">
-    <header><div id="header-placeholder"></div></header>
-
-    <section>
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="glass-panel">
-            <p class="contact-text">Have a project in mind? I can help with a custom website, WordPress or Blogger theme, browser-based tool, SEO-focused interface, or a small automation workflow. Share your goals, timeline, and any reference links so we can discuss a practical solution.</p>
-            <a class="contact-link" href="mailto:aapka-email@example.com">📧 Email Me</a>
-            <a class="contact-link moved-inline-contact-10" href="https://github.com/deepaksaini-git" target="_blank">GitHub</a>
-            <a class="contact-link moved-inline-contact-11" href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-        </div>
-    </section>
-
-    <div id="footer-placeholder"></div>
-    <script src="load-components.js"></script>
-</body>
-</html>
+---
+layout: default
+title: Contact
+description: "Get in touch with Deepak Saini for custom WordPress/Blogger themes, web tools, or automation projects."
+---
+<section>
+    <h1 class="section-title">Let's Work Together</h1>
+    <div class="glass-panel">
+        <p class="contact-text">Have a project in mind? I can help with a custom website, WordPress or Blogger theme, browser-based tool, SEO-focused interface, or a small automation workflow. Share your goals, timeline, and any reference links so we can discuss a practical solution.</p>
+        {% if site.email and site.email != "" %}<a class="contact-link" href="mailto:{{ site.email }}">📧 Email Me</a>{% endif %}
+        {% if site.github and site.github != "" %}<a class="contact-link contact-link--alt" href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        {% if site.linkedin and site.linkedin != "" %}<a class="contact-link contact-link--alt" href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+        {% if site.telegram and site.telegram != "" %}<a class="contact-link contact-link--alt" href="{{ site.telegram }}" target="_blank" rel="noopener">Telegram</a>{% endif %}
+    </div>
+</section>

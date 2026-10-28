@@ -1,60 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium WordPress Themes | Deepak Saini</title>
-    <meta name="description" content="Download custom WordPress themes for APK sites, phone specifications, and Govt Job portals.">
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/deepaksaini-git/deepaksaini-git.github.io/refs/heads/main/DS%20Icon.jpg">
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body data-page="wordpress-themes">
-    <header><div id="header-placeholder"></div></header>
-
-
+---
+layout: default
+title: Premium WordPress Themes
+description: "Download custom WordPress themes for APK sites, phone specifications, and Govt Job portals."
+---
 <section>
+    <h1 class="section-title">WordPress Themes</h1>
     <div class="theme-container">
+        {% for t in site.data.themes %}
         <div class="theme-card">
-            <img alt="APK Download Theme" class="theme-image" src="https://via.placeholder.com/600x400/0a1628/22c55e?text=APK+Download+Theme">
+            <div class="theme-image theme-image--{{ t.color }}" role="img" aria-label="{{ t.title | escape }} preview">{{ t.image_text }}</div>
             <div class="theme-info">
-                <span class="price-tag">₹499 / $9</span>
-                <h2 class="theme-title">APK Download Pro</h2>
-                <p class="theme-desc">Custom post types and meta fields for APK downloading sites. Fast loading with built-in download timer and schema markup.</p>
+                <span class="price-tag">{{ t.price }}</span>
+                <h2 class="theme-title">{{ t.title }}</h2>
+                <p class="theme-desc">{{ t.desc }}</p>
                 <div class="button-group">
-                    <a class="btn btn-preview" href="#" target="_blank">Live Preview</a>
-                    <a class="btn btn-download" href="#">Download / Buy</a>
+                    {% if t.preview and t.preview != "" %}<a class="btn btn-preview" href="{{ t.preview }}" target="_blank" rel="noopener">Live Preview</a>{% else %}<span class="btn btn-preview btn-disabled" aria-disabled="true">Preview soon</span>{% endif %}
+                    {% if t.download and t.download != "" %}<a class="btn btn-download" href="{{ t.download }}" target="_blank" rel="noopener">{{ t.download_label }}</a>{% else %}<span class="btn btn-download btn-disabled" aria-disabled="true">Coming soon</span>{% endif %}
                 </div>
             </div>
         </div>
-        <div class="theme-card">
-            <img alt="Phone Comparison Theme" class="theme-image" src="https://via.placeholder.com/600x400/0a1628/38bdf8?text=Phone+Comparison+Theme">
-            <div class="theme-info">
-                <span class="price-tag">₹799 / $12</span>
-                <h2 class="theme-title">Mobile Specs & Compare</h2>
-                <p class="theme-desc">Side-by-side specification comparison for up to 4 devices. Perfect for tech blogs. Includes pros/cons and affiliate buttons.</p>
-                <div class="button-group">
-                    <a class="btn btn-preview" href="#" target="_blank">Live Preview</a>
-                    <a class="btn btn-download" href="#">Download / Buy</a>
-                </div>
-            </div>
-        </div>
-        <div class="theme-card">
-            <img alt="Job Portal Theme" class="theme-image" src="https://via.placeholder.com/600x400/0a1628/22c55e?text=Job+Portal+Theme">
-            <div class="theme-info">
-                <span class="price-tag">Free Lite Version</span>
-                <h2 class="theme-title">Govt Job Alerts Theme</h2>
-                <p class="theme-desc">Clean UI designed for Govt Job notification blogs like IndGovtJobs. Comes with custom tables and high AdSense CTR layout.</p>
-                <div class="button-group">
-                    <a class="btn btn-preview" href="#" target="_blank">Live Preview</a>
-                    <a class="btn btn-download" href="#">Download Free</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
-
-    
-    <div id="footer-placeholder"></div>
-    <script src="load-components.js"></script>
-</body>
-</html>
