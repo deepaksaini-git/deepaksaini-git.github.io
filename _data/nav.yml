@@ -1,0 +1,13 @@
+- title: Home
+  url: /
+- title: About
+  url: /about.html
+- title: Projects
+  url: /projects.html
+- title: Themes
+  url: /wordpress-themes.html
+- title: Contact
+  url: /contact.html
+- title: Live
+  url: /live.html
+  live: true
