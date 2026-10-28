@@ -1,0 +1,60 @@
+{%- if site.telegram and site.telegram != "" %}
+<a href="{{ site.telegram }}" target="_blank" rel="noopener" class="telegram-float">✈️ Join Telegram</a>
+{%- endif %}
+
+<footer class="custom-footer">
+    <div class="footer-upper">
+        <div class="footer-left">
+            <div class="f-logo">DS</div>
+            <div class="f-title">Deepak Saini</div>
+            <p class="f-desc">Web Designer &amp; Automation Developer. Customizing WordPress themes, Blogger XML, and Python scripts to make the web faster and more efficient.</p>
+        </div>
+        <div class="footer-right">
+            <div class="f-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/wordpress-themes.html">Themes</a></li>
+                </ul>
+            </div>
+            <div class="f-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/live.html">Live Updates</a></li>
+                    <li><a href="/govt-exam-photo-signature-resizer.html">Image Resizer</a></li>
+                    <li><a href="/sitemap.html">Sitemap</a></li>
+                    <li><a href="/capcut-mod-apk.html">CapCut Guide</a></li>
+                </ul>
+            </div>
+            <div class="f-column">
+                <h4>Join Me</h4>
+                <div class="social-icons">
+                    {%- if site.github and site.github != "" %}
+                    <a href="{{ site.github }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">GH</a>
+                    {%- endif %}
+                    {%- if site.telegram and site.telegram != "" %}
+                    <a href="{{ site.telegram }}" target="_blank" rel="noopener" title="Telegram" aria-label="Telegram">TG</a>
+                    {%- endif %}
+                    {%- if site.youtube and site.youtube != "" %}
+                    <a href="{{ site.youtube }}" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">YT</a>
+                    {%- endif %}
+                    {%- if site.linkedin and site.linkedin != "" %}
+                    <a href="{{ site.linkedin }}" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">IN</a>
+                    {%- endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="bottom-left">© {{ site.time | date: "%Y" }} Deepak Saini. All rights reserved.</div>
+        <div class="bottom-right">
+            <ul>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-conditions.html">Terms of Use</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
