@@ -1,0 +1,24 @@
+---
+layout: default
+title: Premium WordPress Themes
+description: "Download custom WordPress themes for APK sites, phone specifications, and Govt Job portals."
+---
+<section>
+    <h1 class="section-title">WordPress Themes</h1>
+    <div class="theme-container">
+        {% for t in site.data.themes %}
+        <div class="theme-card">
+            <div class="theme-image theme-image--{{ t.color }}" role="img" aria-label="{{ t.title | escape }} preview">{{ t.image_text }}</div>
+            <div class="theme-info">
+                <span class="price-tag">{{ t.price }}</span>
+                <h2 class="theme-title">{{ t.title }}</h2>
+                <p class="theme-desc">{{ t.desc }}</p>
+                <div class="button-group">
+                    {% if t.preview and t.preview != "" %}<a class="btn btn-preview" href="{{ t.preview }}" target="_blank" rel="noopener">Live Preview</a>{% else %}<span class="btn btn-preview btn-disabled" aria-disabled="true">Preview soon</span>{% endif %}
+                    {% if t.download and t.download != "" %}<a class="btn btn-download" href="{{ t.download }}" target="_blank" rel="noopener">{{ t.download_label }}</a>{% else %}<span class="btn btn-download btn-disabled" aria-disabled="true">Coming soon</span>{% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

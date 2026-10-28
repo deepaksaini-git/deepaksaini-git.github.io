@@ -1,0 +1,36 @@
+# ---------- Site ----------
+title: Deepak Saini
+description: Portfolio of Deepak Saini, Web Designer, CMS Theme Designer, and Automation Script Developer. Customizing WordPress themes, Blogger XML, and Python scripts.
+url: "https://deepaksaini-git.github.io"
+baseurl: ""
+lang: en
+
+# Post URLs: /post-slug.html
+permalink: /:title.html
+
+# ---------- Contact / social (EDIT THESE) ----------
+# Khali chhodne par wo link site par dikhega hi nahi (koi broken link nahi).
+email: ""                 # e.g. you@gmail.com
+telegram: ""              # e.g. https://t.me/yourchannel
+youtube: ""               # e.g. https://youtube.com/@yourchannel
+linkedin: ""              # e.g. https://linkedin.com/in/your-id
+github: "https://github.com/deepaksaini-git"
+job_site: "https://IndGovtJobs-com.blogspot.com"
+
+# ---------- Build ----------
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
